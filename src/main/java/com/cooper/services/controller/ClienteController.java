@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cooper.entities.Cliente;
-import com.cooper.entities.Usuario;
 import com.cooper.services.ClienteService;
 
 @RestController

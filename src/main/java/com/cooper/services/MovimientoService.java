@@ -36,5 +36,7 @@ public class MovimientoService {
 		return movimientoRepository.findByTipoPago(tipoPago);
 	}
 	
-	
+	public Movimiento save(Movimiento movimiento){
+		return movimientoRepository.save(movimiento);
+	}
 }
