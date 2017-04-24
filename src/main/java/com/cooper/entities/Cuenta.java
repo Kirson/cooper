@@ -20,8 +20,9 @@ public class Cuenta implements Serializable {
 	private Date fechaApertura;
 	private Date fechaUltimoMovimiento;
 	private BigDecimal saldo;
-	private Catalogo catalogo;
+	private Catalogo tipoCuenta;
 	private Cliente cliente;
+	private String numeroCuenta;
 	private List<Movimiento> movimientos1;
 	private List<Movimiento> movimientos2;
 
@@ -70,6 +71,17 @@ public class Cuenta implements Serializable {
 		this.fechaUltimoMovimiento = fechaUltimoMovimiento;
 	}
 
+	
+	@Column(name="numero_cuenta")
+	public String getNumeroCuenta() {
+		return numeroCuenta;
+	}
+
+
+	public void setNumeroCuenta(String numeroCuenta) {
+		this.numeroCuenta = numeroCuenta;
+	}
+
 
 	public BigDecimal getSaldo() {
 		return this.saldo;
@@ -83,12 +95,12 @@ public class Cuenta implements Serializable {
 	//bi-directional many-to-one association to Catalogo
 	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="id_tipo_cuenta")
-	public Catalogo getCatalogo() {
-		return this.catalogo;
+	public Catalogo getTipoCuenta() {
+		return this.tipoCuenta;
 	}
 
-	public void setCatalogo(Catalogo catalogo) {
-		this.catalogo = catalogo;
+	public void setTipoCuenta(Catalogo catalogo) {
+		this.tipoCuenta = catalogo;
 	}
 
 
